@@ -23,7 +23,8 @@ public class SignupController {
 
     @PostMapping("/signup")
     @ResponseBody
-    public String signup(MemberDTO memberDTO) {
+    public String signup( MemberDTO memberDTO) {
+        System.out.println(memberDTO);
         return signupService.signup(memberDTO);
     }
 }
