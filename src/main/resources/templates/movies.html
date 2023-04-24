@@ -187,9 +187,15 @@
                 let con='';
                 for(let i=0;i<data.length;i++){
 
-                    let movieImgUrlArr = data[i].movieImg.split("|");
-                    let randomNum = Math.floor(Math.random() * movieImgUrlArr.length);
-                    let movieImgUrl = movieImgUrlArr[randomNum];
+                  let movieImgUrlArr = null;
+                  let randomNum = 0;
+                  let movieImgUrl = 'https://biophysicalsociety.files.wordpress.com/2015/12/800px-face_eyes_caricature_comic_cry_how.png';
+
+                    if (data[i].movieImg != null) {
+                      movieImgUrlArr = data[i].movieImg.split("|");
+                      randomNum = Math.floor(Math.random() * movieImgUrlArr.length);
+                      movieImgUrl = movieImgUrlArr[randomNum];
+                    }
 
                     con+='<div style="display: inline-block; width: 25%; margin-bottom: 40px;">';
                     con+='<div class="box-image">';
